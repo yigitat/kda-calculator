@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -30,7 +33,8 @@ h1 {
 }
 
 .container {
-  max-width: 500px;
+  width: 100%;
+  max-width: 420px;
   margin: 0 auto;
   background: #1e1e1e;
   padding: 20px;
@@ -148,4 +152,40 @@ text-align: center;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 16px;
+  }
+
+  .kda-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .kda-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  .kda-result {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .kda-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 12px;
+  }
 }
