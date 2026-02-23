@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KDA Calculator</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logo.png">
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<div class="card">
+
+    <img src="logo.png" class="logo">
+
+    <div class="inputs">
+        <input type="number" id="kills" placeholder="Kills">
+        <input type="number" id="deaths" placeholder="Deaths">
+        <input type="number" id="assists" placeholder="Assists">
+    </div>
+
+    <button onclick="hesapla()">Calculate</button>
+    <button onclick="sifirla()" class="reset">Reset</button>
+
+    <div id="result"></div>
+
+</div>
+
+<footer>
+    © 2025 <a href="https://yigitat.github.io/me/" target="_blank">Yiğit Alp</a> • All rights reserved
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
