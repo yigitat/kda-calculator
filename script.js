@@ -10,9 +10,7 @@ function hesapla() {
 
 
     document.getElementById("result").innerHTML =
-        `KDA: ${kda.toFixed(2)}<br>
-         Rank: ${rank}<br>
-         <img src="${img}" class="rank-img">`;
+        `KDA: ${kda.toFixed(2)}<br>`;
 }
 
 function sifirla() {
