@@ -90,8 +90,9 @@ button:hover {
     box-shadow: 0 0 20px #ff4655;
 }
 
-button.home:hover {
-    box-shadow: 0 0 20px #229113;
+.home {
+    box-shadow: 0 0 20px #229113 !important ;
+    background: #444 !important ;
 }
 
 .reset {
