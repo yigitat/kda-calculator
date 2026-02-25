@@ -16,11 +16,6 @@ function hesaplaRank(game) {
 
     let rank = "";
     let img = "";
-<<<<<<< HEAD
-
-=======
-
->>>>>>> cee4fefd955f7de5edaa404b085f8a8c6f1e8698
 
     document.getElementById("result").innerHTML =
         `KDA: ${kda.toFixed(2)}<br>`;
