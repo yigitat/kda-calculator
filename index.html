@@ -5,33 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KDA Calculator</title>
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="images/logo.png">
 </head>
-<body>
+<body class="home">
 
-<div class="background-glow"></div>
+<h1 class="title">KDA ANALYZER</h1>
 
-<div class="card">
+<div class="game-selection">
 
-    <img src="logo.png" class="logo">
+    <a href="valorant.html" class="game-card valorant">
+        <img src="images/valorant.png">
+        <h2>VALORANT</h2>
+    </a>
 
-    <div class="inputs">
-        <input type="number" id="kills" placeholder="Kills">
-        <input type="number" id="deaths" placeholder="Deaths">
-        <input type="number" id="assists" placeholder="Assists">
-    </div>
-
-    <button onclick="hesapla()">Calculate</button>
-    <button onclick="sifirla()" class="reset">Reset</button>
-
-    <div id="result"></div>
+    <a href="cs2.html" class="game-card cs2">
+        <img src="images/cs2.png">
+        <h2>CS2</h2>
+    </a>
 
 </div>
 
 <footer>
-    © 2025 <a href="https://yigitat.github.io/me/" target="_blank">Yiğit Alp</a> • All rights reserved
+© 2025 <a href="https://yigitat.github.io/me/" target="_blank">Yiğit Alp</a> • All rights reserved 
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
