@@ -1,29 +1,136 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>MOBA KDA</title>
-<link rel="stylesheet" href="style.css?v=2">
-<link rel="icon" href="images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDA Calculator - MOBA</title>
+    <meta name="description" content="Calculate your MOBA KDA and Kill Participation.">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .input-box.team-kills-box label {
+            color: var(--text-main);
+        }
+
+        .input-box.team-kills-box input:focus {
+            border-color: var(--text-main);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .kp-stat {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .kp-label {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .kp-value {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+    </style>
 </head>
+
 <body>
+    <div class="background-wrapper">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="noise-overlay"></div>
+    </div>
 
-<div class="card">
+    <nav class="top-nav">
+        <a href="index.html" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            BACK TO MENU
+        </a>
+    </nav>
 
-<h2>MOBA KDA ANALYZER</h2>
+    <main class="app-container">
+        <header class="app-header">
+            <div class="badge">MOBA ANALYZER</div>
+            <h1>KDA & KP <span>CALCULATOR</span></h1>
+            <p>Determine your impact on the Rift or Ancients.</p>
+        </header>
 
-<input type="number" id="kills" placeholder="Kills">
-<input type="number" id="deaths" placeholder="Deaths">
-<input type="number" id="assists" placeholder="Assists">
+        <div class="calculator-card glass-panel">
+            <div class="inputs-wrapper">
+                <div class="input-box kill-box">
+                    <label for="input-kills">Kills</label>
+                    <input type="number" id="input-kills" min="0" value="0">
+                </div>
 
-<button onclick="hesaplaMOBA()">Calculate</button>
-<button onclick="sifirla()" class="reset">Reset</button>
-<a href="https://yigitat.github.io/kda-calculator/"><button class="reset">Back To Home</button></a>
+                <div class="input-box death-box">
+                    <label for="input-deaths">Deaths</label>
+                    <input type="number" id="input-deaths" min="0" value="0">
+                </div>
 
-<div id="result"></div>
+                <div class="input-box assist-box">
+                    <label for="input-assists">Assists</label>
+                    <input type="number" id="input-assists" min="0" value="0">
+                </div>
 
-</div>
+                <div class="input-box team-kills-box">
+                    <label for="input-team-kills" title="Total kills achieved by your team">Team Kills</label>
+                    <input type="number" id="input-team-kills" min="0" value="0">
+                </div>
+            </div>
 
-<script src="script.js"></script>
+            <div class="divider"></div>
+
+            <div class="results-wrapper">
+                <div class="result-circle">
+                    <svg class="progress-ring" width="160" height="160">
+                        <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8"
+                            fill="transparent" r="70" cx="80" cy="80" />
+                        <circle class="progress-ring__circle" stroke="#b800ff" stroke-width="8" fill="transparent"
+                            r="70" cx="80" cy="80" />
+                    </svg>
+                    <div class="kda-value-container">
+                        <span id="kda-score" class="score-value">0.00</span>
+                        <span class="score-label">KDA</span>
+                    </div>
+                </div>
+
+                <div class="evaluation-panel">
+                    <h2 id="eval-title" class="tier-title">Unranked</h2>
+                    <p id="eval-desc" class="tier-desc">Enter your stats to see your rank.</p>
+
+                    <div class="kp-stat">
+                        <span class="kp-label">Kill Participation</span>
+                        <span id="kp-score" class="kp-value">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <p>© 2025 <a href="https://yigitat.github.io/me/" target="_blank">Yiğit Alp</a> • All rights reserved </p>
+
+    </footer>
+
+    <script src="moba.js"></script>
 </body>
+
 </html>
