@@ -1,30 +1,113 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>FPS KDA</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="images/logo.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDA Calculator - FPS</title>
+    <meta name="description"
+        content="Calculate your gaming Kill/Death/Assist ratio with this beautiful dark mode tool.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <div class="background-wrapper">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="noise-overlay"></div>
+    </div>
 
-<div class="card">
+    <nav class="top-nav">
+        <a href="index.html" class="back-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            BACK TO MENU
+        </a>
+    </nav>
 
-<h2>FPS KDA ANALYZER</h2>
+    <main class="app-container">
+        <header class="app-header">
+            <div class="badge">STATS ANALYZER</div>
+            <h1>KDA <span>CALCULATOR</span></h1>
+            <p>Enter your match stats to determine your performance tier.</p>
+        </header>
 
-<input type="number" id="kills" placeholder="Kills">
-<input type="number" id="deaths" placeholder="Deaths">
-<input type="number" id="assists" placeholder="Assists">
+        <div class="calculator-card glass-panel">
+            <div class="inputs-wrapper">
+                <div class="input-box kill-box">
+                    <label for="input-kills">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        Kills
+                    </label>
+                    <input type="number" id="input-kills" min="0" value="0">
+                </div>
 
-<button onclick="hesaplaCS2()">Calculate</button>
-<button onclick="sifirla()" class="reset">Reset</button>
-<a href="https://yigitat.github.io/kda-calculator/"><button class="reset">Back To Home</button></a>
+                <div class="input-box death-box">
+                    <label for="input-deaths">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="15" y1="9" x2="9" y2="15" />
+                            <line x1="9" y1="9" x2="15" y2="15" />
+                        </svg>
+                        Deaths
+                    </label>
+                    <input type="number" id="input-deaths" min="0" value="0">
+                </div>
 
-<div id="result"></div>
+                <div class="input-box assist-box">
+                    <label for="input-assists">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Assists
+                    </label>
+                    <input type="number" id="input-assists" min="0" value="0">
+                </div>
+            </div>
 
-</div>
+            <div class="divider"></div>
 
-<script src="script.js"></script>
+            <div class="results-wrapper">
+                <div class="result-circle">
+                    <svg class="progress-ring" width="160" height="160">
+                        <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="8"
+                            fill="transparent" r="70" cx="80" cy="80" />
+                        <circle class="progress-ring__circle" stroke="#00ff88" stroke-width="8" fill="transparent"
+                            r="70" cx="80" cy="80" />
+                    </svg>
+                    <div class="kda-value-container">
+                        <span id="kda-score" class="score-value">0.00</span>
+                        <span class="score-label">KDA</span>
+                    </div>
+                </div>
+
+                <div class="evaluation-panel">
+                    <h2 id="eval-title" class="tier-title">Unranked</h2>
+                    <p id="eval-desc" class="tier-desc">Enter your stats to see your rank.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <p>© 2025 <a href="https://yigitat.github.io/me/" target="_blank">Yiğit Alp</a> • All rights reserved </p>
+
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
