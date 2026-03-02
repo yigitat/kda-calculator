@@ -1,0 +1,70 @@
+/* Home Page Specific Styles */
+.home-container {
+    max-width: 800px;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 3rem 2rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.fps-card:hover {
+    border-color: var(--color-kill);
+    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.15);
+}
+
+.moba-card:hover {
+    border-color: var(--tier-godlike);
+    box-shadow: 0 10px 40px rgba(184, 0, 255, 0.15);
+}
+
+.card-icon {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.fps-card:hover .card-icon {
+    color: var(--color-kill);
+}
+
+.moba-card:hover .card-icon {
+    color: var(--tier-godlike);
+}
+
+.game-card h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.game-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
+}
